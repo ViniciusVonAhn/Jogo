@@ -69,10 +69,25 @@ public class Jogo {
             vidaM1 = vidaM1 - forca;
             vida = vida  - forcaM1;
         }else if (vidaM1 == 0){
-            m = ("Parabйns, vocк matou o Charmander");
+            m = ("Parabens, vocк matou o Charmander");
             exp = exp + 30;
             moedas = moedas + 30;
             vidaM1 = 100;
+        }
+        return m;
+    }
+    String monstro2() {
+        String m = "";
+        if (forca > destrezaM2){
+            arma = arma - 1;
+            energia = energia - 20;
+            vidaM2 = vidaM2 - forca;
+            vida = vida  - forcaM1;
+        }else if (vidaM2 == 0){
+            m = ("Parabens, vocк matou o Kobolt");
+            exp = exp + 30;
+            moedas = moedas + 30;
+            vidaM2 = 100;
         }
         return m;
     }

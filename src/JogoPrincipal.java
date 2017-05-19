@@ -9,8 +9,9 @@ public class JogoPrincipal {
         Scanner entrada = new Scanner(System.in);
         Jogo criar = new Jogo();
         Random r = new Random();
+        int op=9;
 
-        System.out.println("Nome: ");
+        System.out.print("Nome do Personagem: ");
         criar.nome = entrada.nextLine();
         criar.nivel = 1;
         criar.mana = 0;
@@ -20,21 +21,22 @@ public class JogoPrincipal {
         criar.energia = 100;
         criar.destreza = 10 + r.nextInt(20);
 
-        while (true) {
+        do {
             System.out.println("===== Skyrim Piorado =====");
             System.out.println("1. Atacar");
             System.out.println("2. Comprar");
             System.out.println("3. Dormir");
             System.out.println("4. Status");
             System.out.println("5. Subir de Nнvel");
-            System.out.println("6. Sair");
-
-            int escolha = entrada.nextInt();
-            switch (escolha){
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            op = entrada.nextInt();
+            switch (op){
                 case 1:
-
-
+                    criar.verificarStatus();
+                case 0:
+                    break;
             }
-        }
+        } while (op != 0);
     }
 }

@@ -78,16 +78,31 @@ public class Jogo {
     }
     String monstro2() {
         String m = "";
-        if (forca > destrezaM2){
+        if (forca > destrezaM2) {
             arma = arma - 1;
             energia = energia - 20;
             vidaM2 = vidaM2 - forca;
-            vida = vida  - forcaM1;
-        }else if (vidaM2 == 0){
+            vida = vida - forcaM2;
+        } else if (vidaM2 == 0) {
             m = ("Parabens, vocк matou o Kobolt");
             exp = exp + 30;
             moedas = moedas + 30;
             vidaM2 = 100;
+        }
+        return m;
+    }
+    String monstro3() {
+        String m = "";
+        if (forca > destrezaM3) {
+            arma = arma - 1;
+            energia = energia - 20;
+            vidaM3 = vidaM3 - forca;
+            vida = vida - forcaM3;
+        } else if (vidaM3 == 0) {
+            m = ("Parabens, vocк matou o Goblin");
+            exp = exp + 30;
+            moedas = moedas + 30;
+            vidaM3 = 100;
         }
         return m;
     }

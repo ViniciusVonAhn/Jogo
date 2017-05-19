@@ -33,7 +33,20 @@ public class JogoPrincipal {
             op = entrada.nextInt();
             switch (op){
                 case 1:
+                    criar.atacar();
+                    continue;
+                case 2:
+                    criar.comprar();
+                    continue;
+                case 3:
+                    criar.dormir();
+                    continue;
+                case 4:
                     criar.verificarStatus();
+                    continue;
+                case 5:
+                    criar.snivel();
+                    continue;
                 case 0:
                     break;
             }

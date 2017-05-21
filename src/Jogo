@@ -1,0 +1,135 @@
+
+public class Jogo {
+
+    JogoPrincipal criarj = new JogoPrincipal();
+    String nome;
+    int vida;
+    int nivel;
+    int arma = 10;
+    int forca;
+    int destreza;
+    int energia;
+    int exp;
+    int mana;
+    int moedas;
+    int monstro1;
+    int monstro2;
+    int monstro3;
+    int chefe;
+    int forcaM1 = 5, forcaM2, forcaM3, forcaC;
+    int destrezaM1 = 10, destrezaM2, destrezaM3, destrezaC;
+    int vidaM1 = 100, vidaM2 = 100, vidaM3 = 100, vidaC = 100;
+
+    String dormir(String d) {
+        
+        if (energia <= 20) {
+            energia = 100;
+            vida = 100;
+            moedas = moedas - 5;
+        } else {
+            d = ("Você ainda tem energia");
+        }
+        return d;
+    }
+
+    String verificarStatus(String mensagem) {
+
+        mensagem = ("Nome................: " + nome)
+                + ("\nNível.............: " + nivel)
+                + ("\nVida..............: " + vida)
+                + ("\nDurabilidade.....: " + arma)
+                + ("\nMana..............: " + mana)
+                + ("\nForça.............: " + forca)
+                + ("\nExperiência.......: " + exp)
+                + ("\nEnergia...........: " + energia)
+                + ("\nDestreza..........: " + destreza)
+                + ("\nMoedas............: " + moedas);
+        return mensagem;
+    }
+
+    String upar(String p) {
+        
+        if (exp >= 100) {
+            nivel++;
+            exp = 0;
+            vida = 100;
+            destreza = destreza + 10;
+            energia = 100;
+            forca = forca + 10;
+            mana = 100;
+            p = ("Parabéns você subiu de nível!");
+        } else {
+            p = ("Você não pode subir de nível! Exp insuficiente");
+        }
+        return p;
+    }
+
+    String monstro1(String m) {
+
+        if (forca <= destrezaM1) {
+            arma = arma - 1;
+            energia = energia - 20;
+            vidaM1 = vidaM1 - forca;
+            vida = (vida - 10) - forcaM1;
+            m = ("Parabéns, você matou o Charmander");
+            exp = exp + 30;
+            moedas = moedas + 30;
+        } else if (vidaM1 == 0) {
+            vidaM1 = 100;
+        }else{
+            m = ("Você ainda não tem poder suficiente");
+            exp = exp - 10;
+        }
+        return m;
+    }
+
+    String monstro2(String m) {
+
+        if (forca <= destrezaM2) {
+            arma = arma - 1;
+            energia = energia - 20;
+            vidaM2 = vidaM2 - forca;
+            vida = (vida - 15) - forcaM2;
+            m = ("Parabéns, você matou o Kobolt");
+            exp = exp + 30;
+            moedas = moedas + 30;
+        } else if (vidaM2 == 0) {
+            vidaM2 = 100;
+        }else{
+            m = ("Você ainda não tem poder suficiente");
+            exp = exp - 10;
+        }
+        return m;
+    }
+
+    String monstro3(String m) {
+
+        if (forca <= destrezaM3) {
+            arma = arma - 1;
+            energia = energia - 20;
+            vidaM3 = vidaM3 - forca;
+            vida = (vida - 20) - forcaM3;
+            m = ("Parabéns, você matou o Allien");
+            exp = exp + 30;
+            moedas = moedas + 30;
+        } else if (vidaM3 == 0) {
+            vidaM3 = 100;
+        }else{
+            m = ("Você ainda não tem poder suficiente");
+            exp = exp - 10;
+        }
+        return m;
+    }
+
+    String comprar(String compra) {
+        
+        compra = ("Bem vindo, o que deseja comprar? ")
+                + ("\n(1) - Arco")
+                + ("\n(2) - Espada")
+                + ("\n(3) - Cajado")
+                + ("\n Digite o número correspondente ao item desejado!");
+
+        return compra;
+    }
+
+}
